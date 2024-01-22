@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet2023.Activity_DetailsView"
+             Title="Activity_DetailsView">
+    <ListView x:Name="ActivityDetails" ItemsSource="{Binding ActivityDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Code, StringFormat='[{0}]'}" FontSize="17" FontAttributes="Bold"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding ActivityName}" />
+                                <Label Grid.Column="2" Text="{Binding ECTS, StringFormat='Nombre ECTS: {0}'}" />
+                                <Label Grid.Column="4" Text="{Binding TeacherName, StringFormat='Teacher: {0}'}"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+</ContentPage>

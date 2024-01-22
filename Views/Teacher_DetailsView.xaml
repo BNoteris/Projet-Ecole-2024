@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet2023.Teacher_DetailsView"
+             Title="Teacher_DetailsView"
+            
+             >
+    <ListView x:Name="TeacherDetails" ItemsSource="{Binding TeacherDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding TeacherId}" FontSize="17" FontAttributes="Bold"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding FirstName}" />
+                                <Label Grid.Column="2" Text="{Binding LastName}" />
+                                <Label Grid.Column="4" Text="{Binding Salary}" />
+                                <Label Grid.Column="6" Text="{Binding Email}"  />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+</ContentPage>
