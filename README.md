@@ -86,13 +86,27 @@ Ce diagramme représente le déroulement de la crétion d'un professeur dans le 
 ## Principe SOLID
 Pour la réalisation de ce projet, il était demandé de respecter au moins 2 principes SOLID qui vont être décrits ci-dessous
 
-### Principe Open/Closed principle
+### Open/closed Principle
 Le premier principe mis en place est de faire en sorte que le code soit facile à adapter à de nouvelles demandes. Donc dans cette optique j'ai mis en place une interface reprenant les fonctions permettant aux classes de discuter avec la database.
 Cette interface est utilisée pour les classes et sous-classes de "Person" car les autres classes avaient des besoins plus spécifiques, mais cette interface est parfaitement réutilisable si on veut rajouter des functions pour une nouvelle classe
 "Proviseur" pour laquelle il suffirait de créer la classe "ProviseurFunctions".
 ```csharp 
+﻿namespace Projet2023;
 
+public interface DataFunctions<T>  //Interface de base pour la création de nouveaux types de personnes dans la database
+{
+     Task<List<T>> GetAllAsync();
+    Task<T> GetByIdAsync(int id);
+    Task CreateAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(T entity);
+    Task<int> GetIdByNameAsync(string name);
+}
+```
 
+### Single Responsability Principle
+En séparant le constructeur de mes différentes classes avec leurs attributs "Student", "Teacher", "Activity", etc,..  et les méthodes pour modifier la database cela me permet d'avoir un meilleur controle sur ce que fait chaque classe
+```csharp 
 
 
 
