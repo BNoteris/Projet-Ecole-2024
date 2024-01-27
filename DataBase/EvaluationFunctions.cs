@@ -6,7 +6,6 @@ namespace Projet2023;
 public class EvaluationFunctions    
 {
     private readonly SQLiteAsyncConnection _connection;
-
     public EvaluationFunctions(SQLiteAsyncConnection connection)
     {
         _connection = connection;
@@ -21,16 +20,15 @@ public class EvaluationFunctions
         AllEval.AddRange(AllCotes);
         return AllEval;
     }
+    
     public async Task<List<Evaluation>> GetAllByStudentIdAsync(int studentId)
 {
     var cotes = await _connection.Table<Cote>().Where(c => c.Student_Id == studentId).ToListAsync().ConfigureAwait(false);
     var appreciations = await _connection.Table<Appreciation>().Where(a => a.Student_Id == studentId).ToListAsync().ConfigureAwait(false);
-
-    var allEvaluations = new List<Evaluation>();
-    allEvaluations.AddRange(appreciations);
-    allEvaluations.AddRange(cotes);
-
-    return allEvaluations;
+    var allEvaluationsByStudentID = new List<Evaluation>();
+    allEvaluationsByStudentID.AddRange(appreciations);
+    allEvaluationsByStudentID.AddRange(cotes);
+    return allEvaluationsByStudentID;
 } 
 
     public async Task<Evaluation> GetByIdAsync(int id)

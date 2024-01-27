@@ -55,13 +55,9 @@ private int _editStudentId;
 	
 private async void ListStudentView_ItemTapped(object sender, ItemTappedEventArgs e){
 		var student = (Student)e.Item;
-
 		var action = await DisplayActionSheet("Action", "Cancel", null, "Edit","Details", "Delete");
-
 		switch(action){
 			case "Edit":
-
-			
 				_editStudentId = student.Id;
 				firstNameEntryField.Text = student.FirstName;
 				lastNameEntryField.Text = student.LastName;

@@ -60,7 +60,7 @@
                                         <ColumnDefinition Width="10"/>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="20"/>
-                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>     
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="1" Text="{Binding ActivityName}" />
                                     <Label Grid.Column="4" Text="{Binding Note,StringFormat='{0}/20' }" />

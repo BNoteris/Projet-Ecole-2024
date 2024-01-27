@@ -26,6 +26,8 @@ public class Evaluation
     public string StudentName { get; set; }
     [ManyToOne]
     public Student student { get; set; }
+
+   
     
 }
 

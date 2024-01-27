@@ -27,8 +27,8 @@ public partial class Student_DetailsView : ContentPage
         Task.Run(async () => listEvaluationView.ItemsSource = await _evaluationFunctions.GetAllByStudentIdAsync(student.Id));
     }
 
- 	public int studentId =  0;
-	public string studentName;
+ 	private int studentId =  0;
+	private string studentName;
 	Student student1 = new();
     private async Task InitializeAsync(Student student)				//Permet d'avoir l'id et le Nom de l'étudiant dans la database
     {
@@ -145,6 +145,7 @@ private async void ListEvaluationView_ItemTapped(object sender, ItemTappedEventA
 				_editEvaluationId = evaluation.Id;
 				activityNameEntryField.Text = evaluation.ActivityName;
 				coteEntryField.Text = Convert.ToString(evaluation.Note);
+				
 				
 
 				break;

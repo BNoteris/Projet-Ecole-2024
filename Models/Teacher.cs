@@ -13,7 +13,4 @@ public class Teacher:Person
     public string Salary {get; set;}
     [Column("teacherId")]
     public string TeacherId {get; set;}
-     
-     
-    public static List<Teacher> Teachers = new List<Teacher>();
 }

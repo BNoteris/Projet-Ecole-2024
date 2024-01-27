@@ -36,7 +36,7 @@ public class TeacherFunctions : DataFunctions<Teacher>
         await _connection.DeleteAsync(teacher).ConfigureAwait(false);
     }
 
-      public async  Task<int> GetIdByNameAsync(string lastName){
+    public async  Task<int> GetIdByNameAsync(string lastName){
         Teacher teacher = await _connection.Table<Teacher>().Where(s => s.LastName == lastName)
             .FirstOrDefaultAsync();
 

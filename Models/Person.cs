@@ -13,10 +13,4 @@ public class Person
     public string LastName {get; set;}
     [Column("email")]
     public string Email {get; set;}
-
-    /*public Person(string firstName, string lastName, string email){
-        this.FirstName=firstName;
-        this.LastName=lastName;
-        this.Email=email;
-    }*/
 }
