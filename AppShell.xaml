@@ -11,14 +11,14 @@
     <ShellContent
         Title="Student"
         ContentTemplate="{DataTemplate local:Student_ListView}"
-        Route="Student_ListView" />
+        Route="Student List" />
     <ShellContent
         Title="Teacher"
         ContentTemplate="{DataTemplate local:Teacher_ListView}"
-        Route="Teacher_ListView" />
+        Route="Teacher List" />
      <ShellContent
         Title="Activity"
         ContentTemplate="{DataTemplate local:Activity_ListView}"
-        Route="Activity" />
+        Route="Activity List" />
 </TabBar>
 </Shell>
