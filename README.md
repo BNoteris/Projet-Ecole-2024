@@ -1,7 +1,6 @@
-![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/9be78010-ee6a-4a6e-b921-df8d6a1db3b2)
+[UML class (2).pdf](https://github.com/BNoteris/Projet-Ecole-2024/files/14072221/UML.class.2.pdf)
 ![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/3f3b746c-c60b-4420-a011-50fb20f43ab3)
 ![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/915e6c5c-7561-4b74-999d-beb16c2ac24c)
-
 ![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/df86e4d6-c6ec-4cf3-bc09-dcc4d1adbee1)
 ![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/0aa5ad18-0651-43ea-b742-d891db8a9f4e)
 ![image](https://github.com/BNoteris/Projet-Ecole-2024/assets/152865115/b15a21d1-ee21-4f12-bf5b-02107f93cfce)
