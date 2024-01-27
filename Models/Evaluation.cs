@@ -27,7 +27,8 @@ public class Evaluation
     [ManyToOne]
     public Student student { get; set; }
 
-   
+    [Column("commentary")]
+    public string Commentary {get; set;}
     
 }
 

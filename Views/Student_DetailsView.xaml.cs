@@ -75,6 +75,7 @@ public partial class Student_DetailsView : ContentPage
         appreciationFrame.IsVisible = !appreciationFrame.IsVisible;
 		string ActivityName = activityNameEntryField.Text;
 		int note = Convert.ToInt32(coteEntryField.Text);
+		string CommentaryC = commentaryCEntryField.Text;
 		if (note>20){
 			 DisplayAlert("Error", "This note is not an acceptable value", "OK");
         return;
@@ -83,7 +84,8 @@ public partial class Student_DetailsView : ContentPage
 			await _evaluationFunctions.CreateAsync(new Cote{
 				note = note,
 				ActivityName = ActivityName,
-				StudentName = studentName
+				StudentName = studentName,
+				Commentary = CommentaryC
 			}, studentName, ActivityName );
 		}
 		else{
@@ -91,12 +93,14 @@ public partial class Student_DetailsView : ContentPage
 				Id= _editEvaluationId,
 				note = note,
 				ActivityName = ActivityName,
-				StudentName = studentName
+				StudentName = studentName,
+				Commentary = CommentaryC
 			}, studentName, ActivityName );
 			_editEvaluationId = 0;
 		}
 		coteEntryField.Text = string.Empty;
 		activityNameEntryField.Text = string.Empty;
+		commentaryCEntryField.Text = string.Empty;
 		listEvaluationView.ItemsSource = await _evaluationFunctions.GetAllByStudentIdAsync(studentId);
 		_ = BulletinAsync(student1); 
 
@@ -112,11 +116,13 @@ public partial class Student_DetailsView : ContentPage
         appreciationFrame.IsVisible = !appreciationFrame.IsVisible;
 		string ActivityName = activityNameEntryField1.Text;
 		string appreciation = appreciationEntryField.Text;
+		string CommentaryA = commentaryAEntryField.Text;
 		if (_editEvaluationId == 0){
 			await _evaluationFunctions.CreateAsync(new Appreciation{
 				appreciation = appreciation,
 				ActivityName = ActivityName,
-				StudentName = studentName
+				StudentName = studentName,
+				Commentary = CommentaryA
 			}, studentName, ActivityName );
 		}
 		else{
@@ -124,12 +130,14 @@ public partial class Student_DetailsView : ContentPage
 				Id= _editEvaluationId,
 				appreciation = appreciation,
 				ActivityName = ActivityName,
-				StudentName = studentName
+				StudentName = studentName,
+				Commentary = CommentaryA
 			}, studentName, ActivityName );
 			_editEvaluationId = 0;
 		}
 		appreciationEntryField.Text = string.Empty;
 		activityNameEntryField1.Text = string.Empty;
+		commentaryAEntryField.Text = string.Empty;
 		listEvaluationView.ItemsSource = await _evaluationFunctions.GetAllByStudentIdAsync(studentId);
 		_ = BulletinAsync(student1); 
 		 
@@ -145,6 +153,7 @@ private async void ListEvaluationView_ItemTapped(object sender, ItemTappedEventA
 				_editEvaluationId = evaluation.Id;
 				activityNameEntryField.Text = evaluation.ActivityName;
 				coteEntryField.Text = Convert.ToString(evaluation.Note);
+				commentaryCEntryField.Text = evaluation.Commentary;
 				
 				
 

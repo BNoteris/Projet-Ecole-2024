@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Projet2023.Student_DetailsView"
              Title="Student_DetailsView">
-    <StackLayout>
+    <StackLayout Margin = "20">
     <Button Text="Add Entry" Clicked="AddEntryButton_Clicked" />
-    <ScrollView>   
+      
         <FlexLayout Direction="Column">
             <ListView x:Name="StudentDetails" ItemsSource="{Binding StudentDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1">
                 <ListView.ItemTemplate>
@@ -36,7 +36,8 @@
             <Frame x:Name="coteFrame" IsVisible="False">
                 <VerticalStackLayout Padding="10">
                     <Entry x:Name="coteEntryField" Placeholder="Cote" />
-                    <Entry x:Name="activityNameEntryField"  Placeholder="Activity Name" />                    
+                    <Entry x:Name="activityNameEntryField"  Placeholder="Activity Name" /> 
+                    <Entry x:Name="commentaryCEntryField"  Placeholder="Your comment" />                    
                     <Button Text="Add Cote" Margin="10" Clicked="saveCoteButton_Clicked"  />
                 </VerticalStackLayout>
             </Frame>
@@ -44,7 +45,8 @@
             <Frame x:Name="appreciationFrame" IsVisible="False">
                 <VerticalStackLayout Padding="10">
                     <Entry x:Name="appreciationEntryField" Placeholder="Appreciation" />
-                    <Entry x:Name="activityNameEntryField1"  Placeholder="Activity Name" />                    
+                    <Entry x:Name="activityNameEntryField1"  Placeholder="Activity Name" />   
+                    <Entry x:Name="commentaryAEntryField"  Placeholder="Your comment" />                   
                     <Button Text="Add Appreciation" Margin="10" Clicked="saveAppreciationButton_Clicked"  />
                 </VerticalStackLayout>
             </Frame>
@@ -60,10 +62,13 @@
                                         <ColumnDefinition Width="10"/>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="auto"/>  
+                                        <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="Auto"/>     
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="1" Text="{Binding ActivityName}" />
-                                    <Label Grid.Column="4" Text="{Binding Note,StringFormat='{0}/20' }" />
+                                    <Label Grid.Column="3" Text="{Binding Note,StringFormat='{0}/20' }" />
+                                    <Label Grid.Column="5" Text="{Binding Commentary}" />
                                 </Grid>
                             </VerticalStackLayout>
                         </ViewCell>
@@ -71,6 +76,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </FlexLayout>
-    </ScrollView> 
+  
     </StackLayout>
 </ContentPage>

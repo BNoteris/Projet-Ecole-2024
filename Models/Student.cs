@@ -11,6 +11,4 @@ public class Student : Person
     public int Id {get; set;}
     [SQLite.Column("studentId")]
     public string StudentId {get; set;}
-    [Ignore]
-    public List<Evaluation> evaluations { get; private set; } = new List<Evaluation>();
 }

@@ -5,7 +5,7 @@
              Title="Teacher_DetailsView"
             
              >
-    <ListView x:Name="TeacherDetails" ItemsSource="{Binding TeacherDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1">
+    <ListView x:Name="TeacherDetails" ItemsSource="{Binding TeacherDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1" Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

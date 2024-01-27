@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Projet2023.Activity_DetailsView"
              Title="Activity_DetailsView">
-    <ListView x:Name="ActivityDetails" ItemsSource="{Binding ActivityDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1">
+    <ListView x:Name="ActivityDetails" ItemsSource="{Binding ActivityDetailsList}" HasUnevenRows="True" FlexLayout.Grow="1" Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
