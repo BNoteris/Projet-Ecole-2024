@@ -27,9 +27,6 @@ public static class MauiProgram
 		return new SQLiteAsyncConnection(databasePath);
 		});
 		builder.Services.AddSingleton<LocalDBService>();	
-		
-		
-		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddTransient<Teacher_ListView>();
 		builder.Services.AddTransient<Student_ListView>();
 		builder.Services.AddTransient<Activity_ListView>();

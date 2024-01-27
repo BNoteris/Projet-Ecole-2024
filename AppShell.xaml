@@ -20,11 +20,5 @@
         Title="Activity"
         ContentTemplate="{DataTemplate local:Activity_ListView}"
         Route="Activity" />
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-         
-       
 </TabBar>
 </Shell>
